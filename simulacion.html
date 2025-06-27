@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Simulación</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f9fb;
+      margin: 40px;
+    }
+    .contenedor {
+      background-color: #ffffff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+
+      /* Animación */
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 1s forwards ease-out;
+    }
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    h1, h2 {
+      color: #2c3e50;
+    }
+    .cuadro {
+      border: 2px solid #3498db;
+      padding: 20px;
+      background-color: #ecf6fb;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+      background-color: #ffffff;
+    }
+    th, td {
+      border: 1px solid #bdc3c7;
+      padding: 12px;
+      text-align: left;
+    }
+    th {
+      background-color: #2980b9;
+      color: white;
+    }
+    .boton-continuar {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 24px;
+      background-color: #27ae60;
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+    }
+    .boton-continuar:hover {
+      background-color: #219150;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="contenedor">
+    <h1>🎮 Simulación</h1>
+    <h2>🛠 Diseño Inverso del Preesfuerzo basado en Simulación</h2>
+    <p>
+      La <strong>simulación computacional</strong> permite modelar y analizar la respuesta estructural de ensamblajes bajo 
+      condiciones reales de operación. Al aplicar el <strong>diseño inverso</strong> sobre estos modelos, es posible ajustar 
+      la <strong>distribución ideal de preesfuerzo</strong> para optimizar el rendimiento del sistema sin necesidad de múltiples pruebas físicas.
+    </p>
+    <p>
+      Esto implica utilizar herramientas de análisis por elementos finitos (FEA), simuladores de contacto y fricción, y datos 
+      de operación para retroalimentar decisiones de diseño en componentes críticos de la unión.
+    </p>
+
+    <div class="cuadro">
+      <h2>🧩 Cuadro Aplicado: Simulación y Diseño Inverso</h2>
+      <table>
+        <tr>
+          <th>Elemento Simulado</th>
+          <th>Uso del Diseño Inverso</th>
+          <th>Resultado Esperado</th>
+        </tr>
+        <tr>
+          <td>Junta con tornillos</td>
+          <td>Se simula el aflojamiento por fatiga. El diseño inverso permite determinar la cantidad exacta de torque.</td>
+          <td>Reducción del mantenimiento y aumento de la durabilidad de la unión.</td>
+        </tr>
+        <tr>
+          <td>Interfaz mecánica ensamblada</td>
+          <td>Se observa distribución de esfuerzos y zonas críticas. Se ajustan preesfuerzos con base en resultados.</td>
+          <td>Mejor adaptación al entorno operativo con menor fallo por deformación.</td>
+        </tr>
+        <tr>
+          <td>Brida sometida a presión</td>
+          <td>Se simulan cargas internas y externas para optimizar la distribución del preesfuerzo.</td>
+          <td>Mayor hermeticidad y resistencia en ciclos de presión.</td>
+        </tr>
+      </table>
+    </div>
+
+    <a href="ejemplo.html" class="boton-continuar">➡️ Continuar</a>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Diseño Inverso del Preesfuerzo en Ensamblaje</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f9fb;
+      margin: 40px;
+    }
+    .contenedor {
+      background-color: #ffffff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+
+      /* Animación */
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 1s forwards ease-out;
+    }
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    h1, h2 {
+      color: #2c3e50;
+    }
+    .cuadro {
+      border: 2px solid #3498db;
+      padding: 20px;
+      background-color: #ecf6fb;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+      background-color: #ffffff;
+    }
+    th, td {
+      border: 1px solid #bdc3c7;
+      padding: 12px;
+      text-align: left;
+    }
+    th {
+      background-color: #2980b9;
+      color: white;
+    }
+    .boton-continuar {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 24px;
+      background-color: #27ae60;
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+    }
+    .boton-continuar:hover {
+      background-color: #219150;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="contenedor">
+    <h1>📘 Fundamentos Teóricos</h1>
+    <h2>🎯 Diseño Inverso de la Distribución Ideal de Preesfuerzo</h2>
+    <p>
+      Este enfoque se basa en aplicar la técnica de <strong>diseño inverso</strong> para determinar cómo debe distribuirse el 
+      <strong>preesfuerzo</strong> en una interfaz de ensamblaje, con el objetivo de maximizar el <strong>rendimiento en servicio</strong>. 
+      A través del análisis del comportamiento real de la unión (deformaciones, esfuerzos, fallos), se busca retroalimentar el diseño 
+      y optimizar la ubicación, magnitud y orientación del preesfuerzo necesario.
+    </p>
+
+    <div class="cuadro">
+      <h2>🧩 Cuadro Conceptos y Ejemplos</h2>
+      <table>
+        <tr>
+          <th>Concepto Clave</th>
+          <th>Descripción</th>
+          <th>Ejemplo Aplicado</th>
+        </tr>
+        <tr>
+          <td>Diseño Inverso</td>
+          <td>Analizar el comportamiento de un ensamble para identificar cómo debió ser diseñado originalmente.</td>
+          <td>Evaluar una junta empernada para determinar la mejor manera de aplicar preesfuerzo según el desgaste observado.</td>
+        </tr>
+        <tr>
+          <td>Distribución de Preesfuerzo</td>
+          <td>Forma ideal de aplicar fuerzas internas en puntos estratégicos de una interfaz mecánica.</td>
+          <td>Distribuir tensión de forma no uniforme en una brida para evitar pandeo o aflojamiento en uso.</td>
+        </tr>
+        <tr>
+          <td>Rendimiento del Servicio</td>
+          <td>Comportamiento de la unión durante su vida útil considerando cargas, vibraciones y condiciones reales.</td>
+          <td>Monitorear uniones en una turbina y reajustar preesfuerzo en función de condiciones de operación.</td>
+        </tr>
+      </table>
+    </div>
+
+    <a href="simulacion.html" class="boton-continuar">➡️ Continuar</a>
+  </div>
+
+</body>
+</html>

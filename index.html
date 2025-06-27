@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login IPIDM</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #dfe9f3, #ffffff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .login-box {
+      background: #ffffff;
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+      
+      /* Animación */
+      opacity: 0;
+      transform: translateY(-30px);
+      animation: fadeSlideDown 0.8s forwards ease-out;
+    }
+    @keyframes fadeSlideDown {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .login-box img {
+      width: 100px; /* tamaño adecuado */
+      margin-bottom: 1rem;
+      user-select: none;
+    }
+    .login-box h1 {
+      font-size: 1.5rem;
+      color: #222;
+      margin-bottom: 0.5rem;
+    }
+    .login-box p {
+      font-size: 0.95rem;
+      color: #555;
+      margin-bottom: 1.2rem;
+    }
+    .login-box input {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+    }
+    .login-box input:focus {
+      border-color: #5b5bd6;
+      outline: none;
+      box-shadow: 0 0 5px #5b5bd6;
+    }
+    .password-container {
+      position: relative;
+    }
+    .toggle {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      font-size: 1.1rem;
+      user-select: none;
+      color: #888;
+      transition: color 0.3s ease;
+    }
+    .toggle:hover {
+      color: #5b5bd6;
+    }
+    .login-box button {
+      width: 100%;
+      background-color: #5b5bd6;
+      color: white;
+      border: none;
+      padding: 0.75rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+    .login-box button:hover {
+      background-color: #4646b8;
+      box-shadow: 0 4px 12px rgba(70, 70, 184, 0.6);
+    }
+    .links {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+    .links a {
+      color: #0066ff;
+      text-decoration: none;
+      transition: text-decoration 0.3s ease;
+    }
+    .links a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      margin-top: 1.5rem;
+      font-size: 0.75rem;
+      color: #999;
+    }
+    .error {
+      color: red;
+      font-size: 0.9rem;
+      margin-top: -0.5rem;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <!-- Cambia el src por la ruta o url de tu logo -->
+    <img src="44436b5e-034a-4466-9e09-b475d38ac503.jpeg" alt="Logo IPIDM" draggable="false">
+    <h1>¡Bienvenido/a a IPIDM!</h1>
+    <p>Por favor, inicia sesión con tus credenciales.</p>
+
+    <form id="loginForm">
+      <input type="text" id="username" placeholder="Usuario" required autocomplete="username" />
+      <div class="password-container">
+        <input type="password" id="password" placeholder="Contraseña" required autocomplete="current-password" />
+        <span class="toggle" onclick="togglePassword()">👁️</span>
+      </div>
+      <div id="errorMessage" class="error"></div>
+      <button type="submit">Continuar</button>
+    </form>
+
+    <div class="links">
+      <p>¿Olvidaste tus datos? <a href="#">Recupéralos aquí</a>.</p>
+      <p>¿Inconvenientes? <a href="#">Contacta al administrador</a>.</p>
+    </div>
+
+    <footer>© 2025 Proyecto IPIDM. Todos los derechos reservados.</footer>
+  </div>
+
+  <script>
+    function togglePassword() {
+      const password = document.getElementById("password");
+      password.type = password.type === "password" ? "text" : "password";
+    }
+
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value.trim();
+      const errorMessage = document.getElementById("errorMessage");
+
+      if (username === "sebas" && password === "1234") {
+        window.location.href = "pagina.html";
+      } else {
+        errorMessage.textContent = "Usuario o contraseña incorrectos.";
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Diseño Inverso del Preesfuerzo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f9fb;
+      margin: 0;
+      padding: 0;
+    }
+    .contenedor {
+      max-width: 900px;
+      margin: 40px auto;
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 0.8s forwards ease-out;
+      animation-delay: 0.2s;
+    }
+    .cuadro, .ejemplo, .cuadro-final {
+      border-left: 6px solid #3498db;
+      padding: 15px 20px;
+      margin: 20px 0;
+      border-radius: 8px;
+      background-color: #ecf6fb;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 0.8s forwards ease-out;
+    }
+    .cuadro {
+      animation-delay: 0.6s;
+    }
+    .ejemplo {
+      border-color: #f1c40f;
+      background-color: #fef9e7;
+      animation-delay: 1s;
+    }
+    .cuadro-final {
+      animation-delay: 1.3s;
+      text-align: center;
+    }
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    h1, h2 {
+      color: #2c3e50;
+    }
+    p {
+      line-height: 1.6;
+    }
+    .boton-continuar {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 12px 24px;
+      background-color: #2980b9;
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+    }
+    .boton-continuar:hover {
+      background-color: #21618c;
+    }
+    input[type="text"], select {
+      padding: 8px;
+      margin-top: 5px;
+      width: 100%;
+      max-width: 300px;
+      font-size: 16px;
+    }
+    label {
+      font-weight: bold;
+      margin-top: 10px;
+      display: block;
+    }
+    .respuesta {
+      margin-top: 10px;
+      color: #27ae60;
+      font-weight: bold;
+    }
+  </style>
+  <script>
+    function verificarFundamento() {
+      const respuesta = document.getElementById("fundamento").value;
+      const mensaje = document.getElementById("resultadoFundamento");
+      if (respuesta.trim() === "600") {
+        mensaje.textContent = "✅ ¡Correcto! El preesfuerzo total es 600 N.";
+      } else {
+        mensaje.textContent = "❌ Revisa tu cálculo. Recuerda: 300 N × 2 = ?";
+      }
+    }
+
+    function verificarSimulacion() {
+      const seleccion = document.getElementById("simulacion").value;
+      const mensaje = document.getElementById("resultadoSimulacion");
+      if (seleccion === "Aumentar el torque del perno 2") {
+        mensaje.textContent = "✅ Correcto. Así equilibras la carga entre los pernos.";
+      } else {
+        mensaje.textContent = "❌ Intenta nuevamente. Recuerda que el perno 2 tiene menos carga.";
+      }
+    }
+  </script>
+</head>
+<body>
+
+  <div class="contenedor">
+    <h1>🔧 Diseño Inverso del Preesfuerzo</h1>
+
+    <h2>📘 Fundamentos Teóricos</h2>
+    <p>
+      El <strong>preesfuerzo</strong> consiste en aplicar tensión controlada a un componente estructural antes de que reciba cargas externas. 
+      Su objetivo es reforzar la unión y evitar fallas.
+    </p>
+
+    <div class="cuadro">
+      <p><strong>Ejemplo numérico interactivo:</strong></p>
+      <p>Dos pernos aplican <strong>300 N</strong> de preesfuerzo cada uno. La carga externa total es de <strong>400 N</strong>.</p>
+      <label for="fundamento">¿Cuál es el total del preesfuerzo aplicado?</label>
+      <input type="text" id="fundamento" placeholder="Ingresa tu respuesta en N" />
+      <button onclick="verificarFundamento()">Verificar</button>
+      <p id="resultadoFundamento" class="respuesta"></p>
+    </div>
+
+    <h2>🎮 Simulación</h2>
+    <div class="cuadro">
+      <p>
+        En una simulación de una unión con tres pernos, se observa que el perno 2 está soportando solo <strong>25%</strong> de la carga total, 
+        mientras que los otros soportan más. ¿Qué deberías hacer según el diseño inverso?
+      </p>
+      <label for="simulacion">Selecciona la mejor opción:</label>
+      <select id="simulacion">
+        <option>Selecciona una opción</option>
+        <option>Reducir el torque en todos los pernos</option>
+        <option>Aumentar el torque del perno 2</option>
+        <option>Quitar el perno 2 y redistribuir carga</option>
+      </select>
+      <button onclick="verificarSimulacion()">Verificar</button>
+      <p id="resultadoSimulacion" class="respuesta"></p>
+    </div>
+
+    <h2>🧠 Ejemplo Aplicado</h2>
+    <div class="ejemplo">
+      <p><strong>Problema:</strong> Una unión falla después de 500 ciclos. La simulación muestra pérdida de contacto en zonas extremas.</p>
+      <p><strong>¿Qué harías tú?</strong> Piensa: ¿cómo redistribuirías el preesfuerzo? ¿Dónde aplicarías más torque?</p>
+      <p><em>(Escribe tu reflexión en tu cuaderno o coméntala en clase).</em></p>
+    </div>
+
+    <div class="cuadro-final">
+      <p>¿Listo para continuar?</p>
+      <a href="gracias.html" class="boton-continuar">➡️ Continuar</a>
+    </div>
+  </div>
+
+</body>
+</html>
